@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/MainMenu.cs" type="Script" id=1]
+
+[sub_resource type="Theme" id=1]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MenuItems" type="VBoxContainer" parent="."]
+margin_left = 170.0
+margin_top = 113.0
+margin_right = 470.0
+margin_bottom = 367.0
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="MenuItems"]
+margin_right = 300.0
+margin_bottom = 14.0
+text = "PONG"
+align = 1
+
+[node name="PlayButton" type="Button" parent="MenuItems"]
+margin_top = 34.0
+margin_right = 300.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 300, 60 )
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="MenuItems"]
+margin_top = 114.0
+margin_right = 300.0
+margin_bottom = 174.0
+rect_min_size = Vector2( 300, 60 )
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="MenuItems"]
+margin_top = 194.0
+margin_right = 300.0
+margin_bottom = 254.0
+rect_min_size = Vector2( 300, 60 )
+text = "Exit"
+
+[connection signal="pressed" from="MenuItems/PlayButton" to="." method="OnPlayPressed"]
+[connection signal="pressed" from="MenuItems/SettingsButton" to="." method="OnSettingsPressed"]
+[connection signal="pressed" from="MenuItems/ExitButton" to="." method="OnExitPressed"]

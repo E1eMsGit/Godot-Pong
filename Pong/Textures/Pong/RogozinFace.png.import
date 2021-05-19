@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/RogozinFace.png-a2fc24573f72028e4620b7ce1c9a09dd.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Textures/Pong/RogozinFace.png"
+dest_files=[ "res://.import/RogozinFace.png-a2fc24573f72028e4620b7ce1c9a09dd.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

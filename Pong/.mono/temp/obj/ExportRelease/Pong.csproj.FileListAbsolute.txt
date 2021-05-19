@@ -1,0 +1,8 @@
+D:\Projects\Godot\Pong\.mono\temp\bin\ExportRelease\Pong.dll
+D:\Projects\Godot\Pong\.mono\temp\bin\ExportRelease\Pong.pdb
+D:\Projects\Godot\Pong\.mono\temp\obj\ExportRelease\Pong.csprojAssemblyReference.cache
+D:\Projects\Godot\Pong\.mono\temp\obj\ExportRelease\Pong.AssemblyInfoInputs.cache
+D:\Projects\Godot\Pong\.mono\temp\obj\ExportRelease\Pong.AssemblyInfo.cs
+D:\Projects\Godot\Pong\.mono\temp\obj\ExportRelease\Pong.csproj.CoreCompileInputs.cache
+D:\Projects\Godot\Pong\.mono\temp\obj\ExportRelease\Pong.dll
+D:\Projects\Godot\Pong\.mono\temp\obj\ExportRelease\Pong.pdb

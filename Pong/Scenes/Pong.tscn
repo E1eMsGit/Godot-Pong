@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Prefabs/Pong/Paddle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefabs/Pong/CeilingFloor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/EscapeMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/Pong/Wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Pong/Pong.cs" type="Script" id=6]
+[ext_resource path="res://Textures/Pong/Field.png" type="Texture" id=7]
+[ext_resource path="res://Prefabs/Pong/Ball.tscn" type="PackedScene" id=8]
+
+[node name="Pong" type="Node2D"]
+pause_mode = 2
+rotation = -0.000275708
+script = ExtResource( 6 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 320, 240 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="EscapeMenu" parent="GUI" instance=ExtResource( 4 )]
+margin_left = 145.0
+margin_top = 190.0
+margin_right = 145.0
+margin_bottom = 190.0
+
+[node name="Pause" type="Label" parent="GUI"]
+anchor_left = -2.38419e-08
+anchor_top = -6.35783e-08
+anchor_bottom = -6.35783e-08
+margin_left = 158.0
+margin_top = 442.0
+margin_right = 321.0
+margin_bottom = 457.0
+rect_scale = Vector2( 2, 2 )
+text = "SPACE - PAUSE, ESC - EXIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftScore" type="Label" parent="GUI"]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 28.0
+margin_bottom = 24.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightScore" type="Label" parent="GUI"]
+margin_left = 600.0
+margin_top = 10.0
+margin_right = 608.0
+margin_bottom = 24.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Ceiling" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 319.999, 48 )
+
+[node name="LeftWall" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( -2, 240.001 )
+
+[node name="RightWall" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 642, 239.999 )
+
+[node name="Floor" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 320.001, 432 )
+_bounceDirection = -1
+
+[node name="Players" type="Node2D" parent="."]
+pause_mode = 1
+
+[node name="Left" parent="Players" instance=ExtResource( 2 )]
+modulate = Color( 0.992157, 0.0784314, 0.0784314, 1 )
+position = Vector2( 40, 240 )
+
+[node name="Right" parent="Players" instance=ExtResource( 2 )]
+modulate = Color( 0.0352941, 0.0745098, 0.976471, 1 )
+position = Vector2( 600, 240 )
+
+[node name="Ball" parent="." instance=ExtResource( 8 )]
+pause_mode = 1
+position = Vector2( 320, 240 )
+
+[connection signal="ScoreChanged" from="Walls/LeftWall" to="." method="UpdateRightScore"]
+[connection signal="ScoreChanged" from="Walls/RightWall" to="." method="UpdateLeftScore"]

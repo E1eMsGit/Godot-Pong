@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PaddleHit.wav-56d723a3c47466ef79d4fc6752253820.sample"
+
+[deps]
+
+source_file="res://Sounds/Pong/PaddleHit.wav"
+dest_files=[ "res://.import/PaddleHit.wav-56d723a3c47466ef79d4fc6752253820.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
